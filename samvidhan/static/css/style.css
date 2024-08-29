@@ -1,0 +1,637 @@
+.nav-item{
+    font-size:20px;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.nav-item:hover{
+    text-decoration: underline;
+    color: #007bff;
+}
+.hero{
+    background: rgb(239, 233, 233);
+}
+
+.heading{
+    color: rgb(32, 32, 34);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.hero-btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid rgb(145, 182, 213);
+    background-color: rgb(54, 154, 235);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: rgb(6, 12, 181);
+    transform: scale(1.05);
+}
+
+.hero-btn:active {
+    transform: translateY(4px);
+}
+
+@media (max-width: 768px) {
+    .hero-btn {
+         padding: 8px 16px; /* Adjust padding for smaller screens */
+         font-size: 14px; /* Adjust font size for smaller screens */
+         border: 2px solid rgb(145, 182, 213); /* Keep the same border color */
+         background-color: rgb(54, 154, 235);/* Maintain the same background color */
+         color: white; /* Keep the text color consistent */
+     }
+ }
+ 
+ @media (max-width: 480px) {
+     .hero-btn {
+         padding: 6px 12px; /* Further adjust padding for very small screens */
+         font-size: 12px; /* Further adjust font size for very small screens */
+         border: 2px solid rgb(145, 182, 213); /* Maintain the same border color */
+         background-color: rgb(54, 154, 235); /* Keep the same background color */
+         color: white; /* Ensure text color is consistent */
+     }
+ }
+
+
+ /* ========= sub section =========== */
+ #sub-section{
+    background: #B1AFFF;
+    padding: 50px;
+ }
+
+ .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.text-link {
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.subheading {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px; /* Add some space above "READ MORE" */
+    display: inline-block; /* Ensure the link respects text alignment */
+    align-self: center;
+}
+
+.read-more:hover {
+    text-decoration:underline ;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.nav-arrow {
+    color: #e6ede5;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+/* ======== content section ========= */
+#content {
+    background: #eaca93;
+    padding: 10px 0 0 20px; /* Default padding for larger screens */
+    margin: 0 auto; /* Center the content horizontally */
+    
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+@media (max-width: 1200px) {
+    #content {
+        padding: 10px 30px; /* Adjust padding for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    #content {
+        padding: 10px 0 0 100px; /* Adjust padding for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #content {
+        padding: 10px 0 0 20px; /* Adjust padding for very small screens */
+    }
+}
+
+/* iPad and other tablet screens */
+@media (max-width: 1024px) and (min-width: 768px) {
+    #content {
+        padding: 10px 20px; /* Adjust padding specifically for iPad screens */
+        display: flex;
+        flex-direction: column; /* Stack children elements vertically */
+        align-items: center; /* Center align children elements */
+    }
+}
+
+
+.view-all-box {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: 2px solid #ccc; /* Light grey border */
+    border-radius: 5px 20px 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.view-all-box:hover {
+    background-color: #f0e267; /* Light yellow background on hover */
+    border-color: #b2e65f; /* Light yellow border on hover */
+}
+
+.view-all-box:focus {
+    outline: none;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .view-all-box {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .view-all-box:hover {
+        background-color: #fffacd; /* Ensure hover effect on smaller screens */
+        border-color: #f0e68c;
+    }
+}
+
+@media (max-width: 576px) {
+    .view-all-box {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .view-all-box:hover {
+        background-color: #fffacd; /* Ensure hover effect on even smaller screens */
+        border-color: #f0e68c;
+    }
+}
+
+.text-content{
+    margin-top: 30px;
+}
+
+.card-body{
+    background: linear-gradient(to top right, #a8eda2, #ffffff, #edcbaa);
+}
+
+/* Card Container */
+.card {
+    width: 18rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: relative; /* Required for the pseudo-element */
+    display: flex; /* Use flexbox to manage layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Card Image */
+.card-img-top {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto; /* Ensure the image scales properly */
+}
+
+/* Card Body */
+.card-body {
+    padding: 15px;
+    flex: 1; /* Allow card body to expand */
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+}
+
+
+
+/* Card Body Animation */
+.card:hover .card-body {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background color */
+    transition: background-color 0.3s ease;
+}
+
+
+.text-box {
+    background-color: #FFD700; /* Vibrant gold background */
+    border: 3px solid #FF4500; /* Bold orange-red border */
+    color: #000; /* Black text color */
+    padding: 20px; /* Space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for a 3D effect */
+    font-family: 'Press Start 2P', cursive; /* Retro gaming font */
+    font-size: 18px; /* Larger font size for readability */
+    text-align: center; /* Center-align the text */
+    max-width: 700px; /* Limit the width of the box */
+    margin: 20px auto; /* Center the box with margin */
+    transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+.text-box:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+
+
+/*====== target section ===== */
+
+#target-section{
+    background:#FFC7ED;
+    padding: 50px;
+}
+
+.view-all-box-2 {
+    margin-top: 10%;
+    padding: 10px 10px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: 2px solid #ccc; 
+    border-radius: 5px 20px 5px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.view-all-box-2:hover {
+    background-color: #f0e267; 
+    border-color: #b2e65f; 
+}
+
+.view-all-box-2:focus {
+    outline: none;
+} 
+
+/* ========= footer section ========== */
+.footer {
+    background-color: #403d3d;
+    padding: 30px 0;
+    font-size: 14px;
+    color: #f1e7e7;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-links {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-content p, 
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-container {
+        padding: 0 10px;
+    }
+}
+
+/* ============ About US ===============*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1.25rem;
+}
+
+/* Who We Are Section */
+.who-we-are{
+    font-size: 20px;
+}
+#who-we-are {
+    background-color: #F1D3CE;
+    background-image: url(/static/samvidhan/images/logo.png);
+    padding: 3rem 1rem;
+     background-size: contain;
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;/* Prevents the image from repeating */
+    background-blend-mode: overlay;
+}
+
+/* Our Vision Section */
+#our-vision {
+    background-image: url(/static/samvidhan/images/vision.png);
+    padding: 3rem 1rem;
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-blend-mode: overlay;
+    background-color: #EECAD5;
+    padding: 3rem 1rem;
+}
+
+/* Our Mission Section */
+#our-mission {
+    background: #F1D3CE;
+    background-image: url(/static/samvidhan/images/mission.png);
+    padding: 3rem 1rem;
+    background-size:cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-blend-mode: overlay; /* Blends the background color with the image */
+}
+
+/* Team Section */
+#our-team {
+    padding: 3rem 1rem;
+    
+}
+
+.team-images {
+    flex: 1;
+}
+
+.team-images img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.team-description {
+    flex: 2;
+    padding-left: 2rem;
+}
+
+#preamble-content{
+    background: #a8eda2;
+    text-align: center;
+    padding: 30px;;
+}
+
+/* ====== fundamental Rights ========= */
+
+#fr-content{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f400;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+
+.right {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #71d4ec;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.right:hover {
+    transform: scale(1.05); /* Scale the element to 105% of its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for a lifted effect */
+}
+
+.right h3 {
+    margin-top: 0;
+    color: #292eb9;
+    font-size: 1.5em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.right p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    font-family: cursive;
+}
+
+
+/* ============ Fundamental Duties ============== */
+/* styles.css */
+
+#fd-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color:#f4f400;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.duty {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #FF9874;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.duty:hover {
+    transform: scale(1.05); /* Scale the element to 105% of its original size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for a lifted effect */
+}
+
+.duty h3 {
+    margin-top: 0;
+    color: #2980b9;
+    font-size: 1.5em;
+}
+
+.duty p {
+    font-size: 1.1em;
+    font-family:cursive;
+    line-height: 1.6em;
+}
+
+/* ========= Directive Principles ========== */
+/* styles.css */
+
+#dr-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.principle {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #FFA38F;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.principle h3 {
+    margin-top: 0;
+    color: #3819d2;
+    font-size: 1.5em;
+}
+
+.principle p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    font-family: cursive;
+}
+
+/* LEARN THROUGH GAMES */
+/* Section Title Styling */
+#learn-through-games{
+    padding-top: 0;
+    margin-top: 0;  
+}
+
+#learn-through-games .section-title {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #333;
+    padding-top: 50px;
+    
+}
+
+/* Card Styling */
+.game-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.game-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.game-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #180161;
+}
+
+.game-card .card-text {
+    font-size: 1rem;
+    color: #0b0b0b;
+}
+
+.game-card .btn-primary {
+    background-color: #4535C1;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.game-card .btn-primary:hover {
+    background-color: #7C00FE;
+}
+
+/* Button Block */
+.btn-block {
+    width: 100%;
+    text-align: center;
+}
+
+/* ========= stages ===========*/

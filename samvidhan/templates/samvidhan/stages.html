@@ -1,0 +1,258 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+ 
+  <style>
+
+
+    /* Style for Audio Controls Container */
+.audio-controls {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #D7C3F1; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Style for Select Dropdown */
+.audio-controls select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #495057;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.audio-controls select:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+/* Style for Audio Player */
+.audio-controls audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .audio-controls {
+        text-align: center;
+    }
+
+    .audio-controls select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+    .video-container video {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+  
+    @media (max-width: 767px) {
+      .video-container video {
+        max-width: 100%;
+      }
+    }
+  
+    @media (min-width: 768px) {
+      .video-container video {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  
+    @media (min-width: 992px) {
+      .video-container video {
+        max-width: 70%;
+      }
+    }
+
+    iframe {
+        width: 100%;
+        height: 400px; /* Adjust height as needed */
+        {% comment %} border: none; {% endcomment %}
+        border-radius: 30px;
+    }
+  </style>
+  <div class="container-fluid">
+      <div class="row" style='background: #FFD7C4; padding: 50px;'>
+          <div class="col-md-6 order-md-1 order-2">
+              <h3 class='mb-3' style='text-align: center; font-family: Times New Roman, Times, serif;'><b>STAGES OF CONSTITUTION-MAKING</b></h3>
+              <p style='font-size:25px; font-family: cursive; color: blue;'>Welcome to this section where we’ll take you through a stage-by-stage overview 
+                  of how the Indian Constituent Assembly drafted the Constitution of India. Explore the key steps and milestones in this historic 
+                  journey with our interactive content!
+              </p>
+          </div>
+          <div class="col-md-6 order-md-2 order-1 video-container">
+                <iframe src="https://drive.google.com/file/d/1Hk0075SHR5_4WvMp-RetMIzwV1Gb3zF_/preview" allow="autoplay"></iframe>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Alternate Text and Images Section -->
+  <div class='container-fluid' style='background:#D7C3F1; padding: 10px;'>
+      <div class="container">
+          <!-- Row 1 -->
+          <div class="row my-5 align-items-center">
+              <div class="col-md-6">
+                  <h2 class='mb-3' style='font-family: Times New Roman, Times, serif;'><b>Formation of the Constituent Assembly (December 9, 1946):</b></h2>
+                  <p style='font-size:20px; font-family: cursive;'> On December 9, 1946, the Constituent Assembly of India convened for the first time in New Delhi. Dr. Sachidanand was initially elected as the interim President of the Assembly, but on December 11, 1946, Dr. Rajendra Prasad took over as the President, with H.C. Mukherjee serving as the Vice-President. This assembly played a crucial role in drafting India’s Constitution, shaping the nation’s future, and ensuring constitutional rights for its citizens.✨</p>
+                  
+                  <!-- Dropdown for Audio Selection -->
+                  <div class="audio-controls">
+                      <h4>Select Language:</h4>
+                      <select id="audioSelect1" onchange="playAudio(this.value, 'audioPlayer1')">
+                          <option value="">Select Language</option>
+                          <option value="{% static 'samvidhan/audio/stage1-hindi.mp3' %}">Hindi</option>
+                          <option value="{% static 'samvidhan/audio/stage1-bengali.mp3' %}">Bengali</option>
+                          {% comment %} <option value="{% static 'samvidhan/audio/stage1-telugu.mp3' %}">Telugu</option> {% endcomment %}
+                      </select>
+                      <audio id="audioPlayer1" controls>
+                          <source id="audioSource1" src="" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                      </audio>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <img src="{% static 'samvidhan/images/stage1.png' %}" alt="Stage 1 Image" class="img-fluid rounded" style='width:auto; height:50vh;'>
+              </div>
+          </div>
+  
+          <!-- Row 2 -->
+          <div class="row my-5 align-items-center">
+              <div class="col-md-6 order-md-2">
+                  <h2 class='mb-3' style='font-family: Times New Roman, Times, serif;'><b>Drafting Committee Formation (August 29, 1947):</b></h2>
+                  <p style='font-size:20px; font-family: cursive;'>On August 29, 1947, the Drafting Committee was formed by the Constituent Assembly of India. Dr. B. R. Ambedkar chaired this committee, which played a pivotal role in preparing the Draft Constitution for India. During their deliberations, the Assembly addressed and resolved a remarkable 2,473 amendments out of a total of 7,635 that were tabled.📜</p>
+                  
+                  <!-- Dropdown for Audio Selection -->
+                  <div class="audio-controls">
+                      <h4>Select Language:</h4>
+                      <select id="audioSelect2" onchange="playAudio(this.value, 'audioPlayer2')">
+                          <option value="">Select Language</option>
+                          <option value="{% static 'samvidhan/audio/stage2-hindi.mp3' %}">Hindi</option>
+                          <option value="{% static 'samvidhan/audio/stage2-bengali.mp3' %}">Bengali</option>
+                          {% comment %} <option value="{% static 'samvidhan/audio/stage2-telugu.mp3' %}">Telugu</option> {% endcomment %}
+                      </select>
+                      <audio id="audioPlayer2" controls>
+                          <source id="audioSource2" src="" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                      </audio>
+                  </div>
+              </div>
+              <div class="col-md-6 order-md-1">
+                  <img src="{% static 'samvidhan/images/stage2.png' %}" style='height:50vh; width:auto;' alt="Stage 2 Image" class="img-fluid rounded">
+              </div>
+          </div>
+  
+          <!-- Row 3 -->
+          <div class="row my-5 align-items-center">
+              <div class="col-md-6">
+                  <h2 class='mb-3' style='font-family: Times New Roman, Times, serif;'><b>Draft Constitution Presentation (February 21, 1948)</b></h2>
+                  <p style='font-size:20px; font-family: cursive;'>On February 21, 1948, the Drafting Committee submitted the Draft Constitution of India to the President of the Constituent Assembly. Four months earlier, the Committee had received a Draft Constitution prepared by the Assembly’s constitutional adviser, B.N. Rau. This initial draft reflected decisions made by the Assembly based on reports from various committees tasked with specific constitutional provisions. </p>
+                  
+                  <!-- Dropdown for Audio Selection -->
+                  <div class="audio-controls">
+                      <h4>Select Language:</h4>
+                      <select id="audioSelect3" onchange="playAudio(this.value, 'audioPlayer3')">
+                          <option value="">Select Language</option>
+                          <option value="{% static 'samvidhan/audio/stage3-hindi.mp3' %}">Hindi</option>
+                          <option value="{% static 'samvidhan/audio/stage3-bengali.mp3' %}">Bengali</option>
+                          {% comment %} <option value="{% static 'samvidhan/audio/stage3-telugu.mp3' %}">Telugu</option> {% endcomment %}
+                      </select>
+                      <audio id="audioPlayer3" controls>
+                          <source id="audioSource3" src="" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                      </audio>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <img src="{% static 'samvidhan/images/stage3.png' %}" style='width: auto; height:50vh;' alt="Stage 3 Image" class="img-fluid rounded">
+              </div>
+          </div>
+  
+          <!-- Row 4 -->
+          <div class="row my-5 align-items-center">
+              <div class="col-md-6 order-md-2">
+                  <h2 class='mb-3' style='font-family: Times New Roman, Times, serif;'><b>Debates and Revisions (November 4, 1948 - October 17, 1949):</b></h2>
+                  <p style='font-size:20px; font-family: cursive;'>During the period from November 4, 1948, to October 17, 1949, the Constituent Assembly engaged in extensive debates and revisions. Key highlights include the presentation of the Draft Constitution by B.R. Ambedkar, meticulous discussions on Fundamental Rights, and the proposal and rejection of various amendments. These deliberations significantly shaped the final version of the Constitution of India, which was ultimately adopted—a historic milestone in our nation’s journey.✨ </p>
+                  
+                  <!-- Dropdown for Audio Selection -->
+                  <div class="audio-controls">
+                      <h4>Select Language:</h4>
+                      <select id="audioSelect4" onchange="playAudio(this.value, 'audioPlayer4')">
+                          <option value="">Select Language</option>
+                          <option value="{% static 'samvidhan/audio/stage4-hindi.mp3' %}">Hindi</option>
+                          <option value="{% static 'samvidhan/audio/stage4-bengali.mp3' %}">Bengali</option>
+                          {% comment %} <option value="{% static 'samvidhan/audio/stage4-telugu.mp3' %}">Telugu</option> {% endcomment %}
+                      </select>
+                      <audio id="audioPlayer4" controls>
+                          <source id="audioSource4" src="" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                      </audio>
+                  </div>
+              </div>
+              <div class="col-md-6 order-md-1">
+                  <img src="{% static 'samvidhan/images/stage4.png' %}" style='height:50vh; width:auto;' alt="Stage 4 Image" class="img-fluid rounded">
+              </div>
+          </div>
+  
+          <!-- Row 5 -->
+          <div class="row my-5 align-items-center">
+              <div class="col-md-6">
+                  <h2 class='mb-3' style='font-family: Times New Roman, Times, serif;'><b>Adoption of the Constitution (November 26, 1949):</b></h2>
+                  <p style='font-size:20px; font-family: cursive;'>The Constituent Assembly of India formally adopted the Constitution of India on November 26, 1949, marking the end of nearly three years of intensive work. This event paved the way for the emergence of a sovereign and democratic republic of India, with a written constitution that has stood the test of time, serving as a beacon of rights, responsibilities, and governance for over seven decades.🎉</p>
+                  
+                  <!-- Dropdown for Audio Selection -->
+                  <div class="audio-controls">
+                      <h4>Select Language:</h4>
+                      <select id="audioSelect5" onchange="playAudio(this.value, 'audioPlayer5')">
+                          <option value="">Select Language</option>
+                          <option value="{% static 'samvidhan/audio/stage5-hindi.mp3' %}">Hindi</option>
+                          <option value="{% static 'samvidhan/audio/stage5-bengali.mp3' %}">Bengali</option>
+                          {% comment %} <option value="{% static 'samvidhan/audio/stage5-telugu.mp3' %}">Telugu</option> {% endcomment %}
+                      </select>
+                      <audio id="audioPlayer5" controls>
+                          <source id="audioSource5" src="" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                      </audio>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <img src="{% static 'samvidhan/images/stage5.png' %}" style='height:50vh; width:auto;' alt="Stage 5 Image" class="img-fluid rounded">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    function playAudio(audioUrl, playerId) {
+        const audioPlayer = document.getElementById(playerId);
+        const audioSource = audioPlayer.querySelector('source');
+        
+        if (audioUrl) {
+            audioSource.src = audioUrl;
+            audioPlayer.load(); // Load the new source
+            audioPlayer.play(); // Play the selected audio
+        } else {
+            audioPlayer.pause();
+            audioSource.src = '';
+        }
+    }
+    
+  </script>
+  
+  {% endblock %}
+
+ 
+ 

@@ -1,0 +1,101 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div class="container">
+        <!-- Centered Heading -->
+        <section id="fd-content">
+            <h2 class="fundamental-duties-heading"><b>Fundamental Duties</b></h2>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1mjfG8SgAezeFoiqI6K_cJHO2vQbnhiMi/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Sub-Headings and Articles Section -->
+        <section class="duty-cards">
+            {% for duty in duties %}
+            <div class="duty">
+                <h3 class="duty-subheading">{{ duty.title }}</h3>
+                <p>{{ duty.description }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</main>
+
+<style>
+    .container {
+        padding: 30px;
+        background-color: #e8f0fe;
+        border-radius: 20px;
+        text-align: center; /* Center all content */
+    }
+    
+    /* Centered Heading */
+    .fundamental-duties-heading {
+        font-size: 42px;
+        color: #1e90ff;
+        text-shadow: 2px 2px 8px #4169e1;
+        margin-bottom: 40px;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    
+    /* Responsive Video Container */
+    .video-container {
+        position: relative;
+        width: 80%; /* Adjust the width as needed */
+        max-width: 640px; /* Maximum width of the video container */
+        margin: 20px auto; /* Center align the video container */
+        padding-top: 56.25%; /* Aspect ratio of 16:9 */
+        border: 2px solid #ccc; /* Optional: Add border for better visibility */
+        border-radius: 8px; /* Optional: Add rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; /* Remove default border */
+        border-radius: 8px; /* Match rounded corners if used */
+    }
+    
+    /* Sub-Headings for Articles */
+    .duty-subheading {
+        font-size: 30px;
+        color: #ff4500;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+    
+    /* Article Text */
+    .duty p {
+        font-size: 18px;
+        color: #333;
+        text-align: left; /* Align text to the left for better readability */
+        margin-bottom: 20px;
+    }
+    
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+        .fundamental-duties-heading {
+            font-size: 34px;
+        }
+    
+        .duty-subheading {
+            font-size: 26px;
+        }
+    
+        .duty p {
+            font-size: 16px;
+        }
+    }
+</style>
+
+{% endblock %}

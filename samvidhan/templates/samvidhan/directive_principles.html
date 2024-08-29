@@ -1,0 +1,95 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div class='container'>
+        <section id="dp-content" style="display: flex; flex-wrap: wrap; align-items: center;">
+            <!-- Left Side: Heading -->
+            <div class="left-side" style="flex: 1; text-align: center;">
+                <h2 class="gamified-heading" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
+                    <b>Directive Principles of State Policy</b>
+                </h2>
+            </div>
+
+            <!-- Right Side: Video -->
+            <div class="right-side" style="flex: 1; text-align: center;">
+                <div class="video-container">
+                    <iframe src="https://drive.google.com/file/d/1Uqlc75L3TcDoMMIdjMFdWjQwNlqYLsPh/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsections with Articles -->
+        <section id="articles-section" style="margin-top: 40px;">
+            {% for principle in principles %}
+            <div class="principle gamified-card" style="padding: 20px; border-radius: 15px; margin-bottom: 20px;">
+                <h3 style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #007bff;">
+                    {{ principle.title }}
+                </h3>
+                <p style="font-size: 16px;">
+                    {{ principle.description }}
+                </p>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</main>
+
+<style>
+    /* Video Container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px; /* Maximum width of the video container */
+        margin: 20px auto; /* Center align the video container */
+        padding-top: 56.25%; /* Aspect ratio of 16:9 */
+        border-radius: 15px; /* Rounded corners */
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none; /* Remove default border */
+        border-radius: 15px; /* Match rounded corners if used */
+    }
+
+    .container {
+        padding: 30px;
+        background-color: #f4f7fc;
+        border-radius: 20px;
+    }
+    
+    .gamified-heading {
+        font-size: 36px;
+        color: #ff6347;
+        text-shadow: 2px 2px 5px #ff4500;
+        margin-bottom: 20px;
+    }
+    
+    .gamified-card {
+        background-color: #fef9c3;
+        border: 2px solid #ffeb3b;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    
+    .gamified-card:hover {
+        transform: scale(1.05);
+    }
+    
+    .principle h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .principle p {
+        font-size: 16px;
+        color: #555;
+    }
+</style>
+
+{% endblock %}

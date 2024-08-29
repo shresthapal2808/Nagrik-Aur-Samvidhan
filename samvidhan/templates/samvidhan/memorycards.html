@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/memorycards.css" %}">
+  </head>
+  <body>
+    <h1>Memory Cards</h1>
+    <div class="grid-container">
+    </div>
+    <!-- Add this modal structure somewhere within your HTML body -->
+<div class="modal" id="matchModal">
+  <div class="modal-content" style='background: #D7C3F1;'>
+    <span class="close-button" id="closeModal">&times;</span>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+
+    <p style='color: black;'><b>Score: </b><span class="score"></span></p>
+    <div class="actions">
+        <button onclick="restart()">Start/Restart</button>
+    </div>
+    <script src="{% static 'js/memorycards.js' %}"></script>
+  </body>
+</html>

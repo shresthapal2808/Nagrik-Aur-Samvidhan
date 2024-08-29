@@ -1,0 +1,73 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid my-5">
+    <!-- Who We Are Section -->
+    <section id="who-we-are" class="text-center mb-3" >
+        <h2 class="section-title"><b>Who Are We ?</b></h2>
+        <p class="section-description">
+            <div class='container who-we-are'>
+            At <strong>Nagrik Aur Samvidhan</strong>, we are a dynamic team of innovators, educators, and enthusiasts dedicated to revolutionizing the way constitutional knowledge is imparted. 
+            Our diverse team comprises experts in technology, education, and gamification, all driven by a common goal: to make the Constitution of India accessible and engaging for every citizen. 
+            We believe that understanding one's rights and responsibilities is crucial for a thriving democracy, and we are committed to achieving this through our interactive and gamified solutions.
+            </div>
+        </p>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section id="our-vision" class="text-center p-5 mb-3">
+        <h2 class="section-title"><b>Our Vision</b></h2>
+        <p class="section-description">
+            Our journey began with a vision to bridge the gap between complex legal texts and everyday understanding. We have harnessed cutting-edge technology to create a platform that combines fun with learning, making it easier for people of all ages to connect with their constitution. 
+            Each member of our team brings unique skills and perspectives, working together to craft experiences that are not only educational but also enjoyable. 
+            Join us in our mission to foster a well-informed citizenry and contribute to a more engaged and enlightened society.
+        </p>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="our-mission" class="text-center p-5 mb-3" >
+        <h2 class="section-title" style='color:black;'><b>Our Mission</b></h2>
+        <p class="section-description" style='color: black;'>At <strong>Nagrik Aur Samvidhan</strong>, our mission is to transform the way constitutional knowledge is perceived and learned. We aim to create a platform where learning about the Constitution of India is not just informative but also engaging and enjoyable. Our goal is to break down complex legal concepts into easy-to-understand, interactive experiences that captivate and educate.</p>
+    </section>
+
+    <!-- Our Team Section -->
+    <section id="our-team" class="mb-3" style="background: #D7C3F1; background-image: url(/static/samvidhan/images/pattern2.png); background-size: contain;">
+        <div class="container">
+            <!-- Translucent box around the heading -->
+            <div class="heading-box text-center" style="background: rgba(255, 255, 255, 0.7); padding: 10px 20px; border-radius: 10px; display: center; margin-bottom: 20px;">
+                <h2 class="section-title" style="font-size: 40px; margin-bottom: 0;"><b>Our Team</b></h2>
+            </div>
+            
+            <p class="text-center" style="font-size: 25px; margin-bottom: 40px;">Meet our dedicated team members who work tirelessly to bring this vision to life. Each member brings a unique set of skills and passion to the project, ensuring its success.</p>
+            
+            <div class="row px-5">
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem1.jpg' %}" alt="Team Member 1" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Shrestha Pal</b></p>
+                </div>
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem2.jpg' %}" alt="Team Member 2" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Sohan Singha Roy</b></p>
+                </div>
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem3.jpg' %}" alt="Team Member 3" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Agnivo Poddar</b></p>
+                </div>
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem4.jpg' %}" alt="Team Member 4" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Jyotishka Koley</b></p>
+                </div>
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem5.jpg' %}" alt="Team Member 5" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Somnath Banik</b></p>
+                </div>
+                <div class="col-md-6 d-flex align-items-center mb-4">
+                    <img src="{% static 'samvidhan/images/mem6.jpg' %}" alt="Team Member 6" class="img-fluid" style="border-radius: 15px; max-width: 120px;"/>
+                    <p style="font-size: 20px; margin-left: 20px;"><b>Deepanjan Dey</b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+{% endblock %}

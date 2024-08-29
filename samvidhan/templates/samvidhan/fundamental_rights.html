@@ -1,0 +1,108 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section id="fr-content">
+        <!-- Page Title -->
+        <h2 style='font-family: Times New Roman, Times, serif; text-align: center; font-size: 3rem; margin-bottom: 30px; color: #2C3E50;'>
+            <b>Fundamental Rights</b>
+        </h2>
+
+        <!-- Video Container -->
+        <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/1iCxlsi_t5Oc1rDIQiTYaOTtGS58JdaYX/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
+        <!-- Rights Section -->
+        <section class="rights-cards">
+            {% for right in rights %}
+            <div class="right">
+                <h2 class="article-number">{{ right.article_number }}</h2>
+                <h3 class="right-title">{{ right.title }}</h3>
+                <p class="right-description">{{ right.description }}</p>
+                {% if right.summary %}
+                <p class="right-summary"><strong>Summary:</strong> {{ right.summary }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+</main>
+
+<style>
+    /* Page Title */
+    #fr-content h2 {
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        font-size: 3rem; /* Large and bold */
+        margin-bottom: 30px;
+        color: #2C3E50; /* Dark blue-gray color */
+    }
+
+    /* Video Container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px; /* Maximum width of the video container */
+        margin: 20px auto; /* Center align the video container */
+        padding-top: 56.25%; /* Aspect ratio of 16:9 */
+        border: 2px solid #BDC3C7; /* Light gray border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none; /* Remove default border */
+        border-radius: 8px; /* Match rounded corners if used */
+    }
+
+    /* Rights Section */
+    .rights-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .right {
+        background-color: #ECF0F1; /* Light background color */
+        border: 1px solid #BDC3C7; /* Light gray border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        width: 90%;
+        max-width: 700px; /* Max width for each card */
+        margin: 15px 0;
+        padding: 20px;
+    }
+
+    .right h2.article-number {
+        font-size: 2rem;
+        color: #3498DB; /* Blue color */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .right h3.right-title {
+        font-size: 1.5rem;
+        color: #2C3E50; /* Dark text color */
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .right p.right-description {
+        font-size: 1rem;
+        color: #2C3E50; /* Dark text color */
+    }
+
+    .right p.right-summary {
+        font-size: 1rem;
+        color: #3498DB; /* Blue color for summary */
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}

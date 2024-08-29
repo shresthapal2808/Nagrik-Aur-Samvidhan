@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <<title>Samvidhan Jagrukta</title>
+    <link rel='icon' href={% static 'samvidhan/images/logo.png'%}/>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url('{% static "samvidhan/images/bg.png" %}') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 90%;
+            max-width: 45em;
+            max-height: 90vh;
+            background: rgba(255, 255, 255, 0.1); /* More transparent */
+            backdrop-filter: blur(20px); /* Enhanced glass effect */
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 3em;
+            border-radius: 1em;
+            box-shadow: 0 4em 5em rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Enhanced glass border */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #wheel {
+            max-height: inherit;
+            width: inherit;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for clarity */
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), /* Inner shadow for depth */
+                        0 0 30px rgba(0, 0, 0, 0.2); /* Outer shadow for depth */
+            top: 0;
+            padding: 0;
+            color: black;
+        }
+
+        #spin-btn {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            height: 26%;
+            width: 26%;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 0;
+            background: radial-gradient(circle, #FF9933, #FFFFFF, #138808); /* Gradient button */
+            color: #ffffff; /* White text */
+            text-transform: uppercase;
+            font-size: 1.8em;
+            letter-spacing: 0.1em;
+            font-weight: 700; /* Bold font */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        #spin-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1); /* Enlarge on hover */
+        }
+
+        img {
+            position: absolute;
+            width: 4em;
+            top: 45%;
+            right: -8%;
+        }
+
+        #final-value {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 1.5em;
+            color: #202020;
+            font-weight: 600; /* Bold text */
+        }
+
+        @media screen and (max-width: 768px) {
+            .wrapper {
+                font-size: 12px;
+            }
+            img {
+                right: -5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <canvas id="wheel"></canvas>
+            <button id="spin-btn">Spin</button>
+            <img src="{% static 'samvidhan/images/arrow.png' %}" alt="spinner-arrow" />
+        </div>
+        <div id="final-value">
+            <p>Click On The Spin Button To Start</p>
+        </div>
+    </div>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Chart JS Plugin for displaying text over chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+    <!-- Script -->
+    <script>
+        const wheel = document.getElementById("wheel");
+        const spinBtn = document.getElementById("spin-btn");
+        const finalValue = document.getElementById("final-value");
+
+        // Object that stores values of minimum and maximum angle for a value
+        const rotationValues = [
+            { minDegree: 0, maxDegree: 30, value: "Article 19-22" },
+            { minDegree: 31, maxDegree: 90, value: "Article 14-18" },
+            { minDegree: 91, maxDegree: 150, value: "Article 32-35" },
+            { minDegree: 151, maxDegree: 210, value: "Article 29-30" },
+            { minDegree: 211, maxDegree: 270, value: "Article 25-28" },
+            { minDegree: 271, maxDegree: 330, value: "Article 23-24" },
+            { minDegree: 331, maxDegree: 360, value: "Article 19-22" },
+        ];
+
+        // Size of each piece
+        const data = [25, 25, 25, 25, 25, 25];
+        // Background color for each piece
+        var pieColors = [
+            "#FF9933", "#FFCC66", "#FFFF99", "#99CC99", "#66CCCC", "#FF6666"
+        ];
+
+        // Create chart
+        let myChart = new Chart(wheel, {
+            // Plugin for displaying text on pie chart
+            plugins: [ChartDataLabels],
+            // Chart Type Pie
+            type: "pie",
+            data: {
+                // Labels (values to be displayed on chart)
+                labels: ["Article 14-18", "Article 19-22", "Article 23-24", "Article 25-28", "Article 29-30", "Article 32-35"],
+                // Settings for dataset/pie
+                datasets: [
+                    {
+                        backgroundColor: pieColors,
+                        data: data,
+                        borderColor: "#424242",
+                        borderWidth: 2,
+                    },
+                ],
+            },
+            options: {
+                // Responsive chart
+                responsive: true,
+                animation: { duration: 0 },
+                plugins: {
+                    // Hide tooltip and legend
+                    tooltip: false,
+                    legend: {
+                        display: false,
+                    },
+                    // Display labels inside pie chart
+                    datalabels: {
+                        color: "#424242",
+                        formatter: (_, context) => context.chart.data.labels[context.dataIndex],
+                        font: { size: 24 },
+                    },
+                },
+            },
+        });
+
+        // Display value based on the randomAngle
+        const valueGenerator = (angleValue) => {
+            for (let i of rotationValues) {
+                // If the angleValue is between min and max then display it
+                if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+                    finalValue.innerHTML = `<a href="${i.value}.html" target="_blank"><p>Value: ${i.value}</p></a>`;
+                    spinBtn.disabled = false;
+                    break;
+                }
+            }
+        };
+
+        // Spinner count
+        let count = 0;
+        // 100 rotations for animation and last rotation for result
+        let resultValue = 101;
+        // Start spinning
+        spinBtn.addEventListener("click", () => {
+            spinBtn.disabled = true;
+            // Empty final value
+            finalValue.innerHTML = "<p>Good Luck!</p>";
+            // Generate random degrees to stop at
+            let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+            // Interval for rotation animation
+            let rotationInterval = window.setInterval(() => {
+                // Set rotation for pie chart
+                myChart.options.rotation = myChart.options.rotation + resultValue;
+                // Update chart with new value
+                myChart.update();
+                // If rotation > 360 reset it back to 0
+                if (myChart.options.rotation >= 360) {
+                    count += 1;
+                    resultValue -= 5;
+                    myChart.options.rotation = 0;
+                } else if (count > 15 && myChart.options.rotation == randomDegree) {
+                    valueGenerator(randomDegree);
+                    clearInterval(rotationInterval);
+                    count = 0;
+                    resultValue = 101;
+                }
+            }, 10);
+        });
+    </script>
+</body>
+</html>

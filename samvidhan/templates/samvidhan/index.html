@@ -1,0 +1,339 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- ================= HERO SECTION ================ -->
+    
+    <div class='container-fluid hero'>
+    <div class="container hero-section">
+        <div class="row align-items-center">
+            <!-- Left Column with Image -->
+            <div class="col-md-6">
+                <img src="{% static 'samvidhan/images/hero.png' %}" class="img-fluid" alt="Nagrik Aur Samvidhan Image">
+            </div>
+    
+            <!-- Right Column with Text -->
+            <div class="col-md-6">
+                <h1 class='heading' style="text-align: center;">NAGRIK AUR SAMVIDHAN</h1>
+                <p style="text-align: justify; margin-top: 20px; font-size: 20px; margin-Right: 25px;">
+                    Welcome to the "Nagrik Aur Samvidhan" platform. Our mission is to spread constitutional literacy among citizens by simplifying the language of the Constitution of India and presenting it in an engaging, accessible format. Dive into various educational games and activities that will help you understand your rights and duties as an Indian citizen.
+                </p>
+                <button class='hero-btn' onclick="scrollToSection()">
+                    Explore More
+                </button>
+            </div>
+        </div>
+    
+</div>
+</div>
+
+
+   
+
+    <script>
+        function scrollToSection() {
+            // Scroll down to a specific section with an ID of "target-section"
+            document.getElementById('target-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+ <!-- ========= Sub Section ============= -->
+<section id="sub-section">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column: Text and Image -->
+            <div class="col-md-6">
+                <h1 style="font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                    <span class="bounce-in-text" style='color: white; font-size: 50px;'>Explore. Engage. Excel.</span> <br>
+                    <span class="fade-in-text" style='color: black;'>Master the Constitution Through Play!</span>
+                </h1>
+            </div>
+            
+            <!-- Right Column: Carousel -->
+            <div class="col-md-6">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- First Slide -->
+                        <div class="carousel-item active">
+                            <img src="{% static 'samvidhan/images/sub4.png' %}" class="d-block w-100 zoom-in-slide" alt="..." style='border-radius: 25px;'>
+                        </div>
+                        <!-- Second Slide -->
+                        <div class="carousel-item">
+                            <img src="{% static 'samvidhan/images/sub2.png' %}" class="d-block w-100 zoom-in-slide" alt="..." style='border-radius: 25px;'>
+                        </div>
+                        <!-- Third Slide -->
+                        <div class="carousel-item">
+                            <img src="{% static 'samvidhan/images/sub3.png' %}" class="d-block w-100 zoom-in-slide" alt="..." style='border-radius: 25px;'>
+                        </div>
+                        <!-- Fourth Slide -->
+                        <div class="carousel-item">
+                            <img src="{% static 'samvidhan/images/sub1.png' %}" class="d-block w-100 zoom-in-slide" alt="..." style='border-radius: 25px;'>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Bounce-in Effect */
+    .bounce-in-text {
+        display: inline-block;
+        font-size: 2em;
+        animation: bounceIn 2s ease-out;
+    }
+
+    @keyframes bounceIn {
+        0% { transform: scale(0.5); opacity: 0; }
+        60% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1); }
+    }
+
+    /* Fade-in Effect */
+    .fade-in-text {
+        display: inline-block;
+        font-size: 1.8em;
+        opacity: 0;
+        animation: fadeInUp 2s 1.5s forwards;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pulse Effect */
+    @keyframes pulse {
+        0%, 100% {
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff6347, 0 0 20px #ff6347;
+        }
+        50% {
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff6347, 0 0 30px #ff6347;
+        }
+    }
+
+    /* Slide-in Effect for Images */
+    .slide-in-img {
+        opacity: 0;
+        animation: slideIn 2s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(-100px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Zoom-in Effect for Carousel Slides */
+    .zoom-in-slide {
+        opacity: 0;
+        animation: zoomIn 1s ease-in-out forwards;
+    }
+
+    @keyframes zoomIn {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Carousel Control Customization */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #ff6347;
+        border-radius: 50%;
+        padding: 10px;
+    }
+</style>
+
+    
+<!--========= navigating through the carousel ============== -->
+    {% comment %} <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.carousel-item');
+            let currentItem = 0;
+        
+            function showItem(index) {
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            }
+        
+            document.querySelectorAll('.nav-arrow').forEach(arrow => {
+                arrow.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (this.classList.contains('prev')) {
+                        currentItem = (currentItem > 0) ? currentItem - 1 : items.length - 1;
+                    } else {
+                        currentItem = (currentItem < items.length - 1) ? currentItem + 1 : 0;
+                    }
+                    showItem(currentItem);
+                });
+            });
+        
+            showItem(currentItem);
+        });       
+</script> {% endcomment %}
+
+
+<!--========== Content Section ================-->
+<section id="content">
+    <div class='container'>
+        <div class='row'>
+            <!-- First Column -->
+            <div class='col-md-3'>
+                <h2 class='text-content' style='font-family: Times New Roman, Times, serif;'>Introduction to the Preamble</h2>
+                <a href="{% url 'preamble' %}" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
+                        <img src="{% static 'samvidhan/images/pic1.png'%}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                The Preamble outlines India’s core principles: sovereignty, socialism, secularism, democracy, and republicanism. It emphasizes justice, liberty, equality, and fraternity.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Second Column -->
+            <div class='col-md-3'>
+                <h2 class='text-content' style='font-family: Times New Roman, Times, serif;'>Directive Principles of State Policy</h2>
+                <a href="{% url 'directive_principles' %}" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
+                        <img src="{% static 'samvidhan/images/pic2.png'%}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                The Directive Principles of State Policy guide the government in creating policies for social, economic, and political justice. They aim to promote the welfare of the people but are not legally enforceable.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Third Column -->
+            <div class='col-md-3'>
+                <h2 class='text-content' style='font-family: Times New Roman, Times, serif;'>Fundamental <br>Duties</h2>
+                <a href="{% url 'fundamental_duties' %}" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
+                        <img src="{% static 'samvidhan/images/pic4.png'%}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                The Fundamental Duties, outline citizens’ Fundamental Duties which include respecting the flag, promoting harmony, protecting public property, striving for excellence, and fostering civic consciousness and societal welfare.
+                             </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Fourth Column -->
+            <div class='col-md-3'>
+                <h2 class='text-content' style='font-family: Times New Roman, Times, serif;'>Fundamental<br>Rights</h2>
+                <a href="{% url 'fundamental_rights' %}" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="width: 100%; margin-top: 20px; margin-bottom: 30px;">
+                        <img src="{% static 'samvidhan/images/pic3.png'%}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Fundamental Rights, safeguard individual liberties and freedoms. They protect against state actions 
+                                and include equality, free speech, the right to life, and protection from discrimination.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--======== target section ========-->
+
+<section id="target-section">
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 5rem; font-size: 50px;
+                    ">Explore how the<br> Indian <br>Constitution was made</h1>
+                </div>
+                <div class='col-md-3'>
+                    <img src='{% static "samvidhan/images/logo2.png" %}' width='200vw' height='300vh' class='my-5'>
+                </div>
+                <div class='col-md-5'>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3>STAGES</h3>
+                        <a href="{%url 'stages'%}" class='view-all-box-2' style='margin-top:4px;'>VIEW ALL →</a>
+                    </div>
+                    
+                    <p class='text-box'>
+                    Discover the journey of India’s Constitution:<br>
+                    <b>Constituent Assembly:</b> Formed in 1946 with 389 members, later 299 after partition.<br>
+                    <b>Drafting Committee:</b> Led by Dr. B.R. Ambedkar, included top leaders and experts.<br>
+                    <b>Debates:</b> 11 sessions over 165 days to shape the final document.<br>
+                    <b>Adoption:</b> Adopted on Nov 26, 1949, effective from Jan 26, 1950 (Republic Day).<br>
+                    <b>Influences:</b>Inspired by British, American, Irish, and French constitutions.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <!--============Games Section ===============-->
+ 
+    <section id="learn-through-games">
+        <div class="container-fluid" style='background: #FF8C9E;'>
+            <h2 class="section-title text-center mb-4" style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif; font-size:45px;'>Learn Through Games</h2>
+            <div class='container'>
+            <div class="row px-3 px-md-4 px-lg-5">
+                <!-- Game 1 Card -->
+                <div class="col-md-4" >
+                    <div class="card game-card">
+                        <img src="{% static 'samvidhan/images/game1.png' %}" class="card-img-top" alt="Game 1 Image">
+                        <div class="card-body" style="background: #5BBCFF;">
+                            <h5 class="card-title" >Spin the Wheel</h5>
+                            <p class="card-text" style='color: black;'> Learn the Indian Constitution in a fun and engaging way by spinning the wheel.
+                                 </p>
+                            <a href="{% url 'wheel'%}" class="btn btn-primary btn-block">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Game 2 Card -->
+                <div class="col-md-4">
+                    <div class="card game-card">
+                        <img src="{% static 'samvidhan/images/game2.png' %}" class="card-img-top" alt="Game 2 Image">
+                        <div class="card-body" style="background: #5BBCFF;">
+                            <h5 class="card-title">Memory Cards</h5>
+                            <p class="card-text">Test your memory and learn the Indian Constitution! Match pairs to master key concepts.</p>
+                            <a href="{% url 'memorycards'%}" class="btn btn-primary btn-block">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Game 3 Card -->
+                <div class="col-md-4">
+                    <div class="card game-card">
+                        <img src="{% static 'samvidhan/images/game3.png' %}" class="card-img-top" alt="Game 3 Image">
+                        <div class="card-body" style="background: #5BBCFF;">
+                            <h5 class="card-title">Guess the Word</h5>
+                            <p class="card-text">Explore the Indian Constitution! Solve clues and fill in the blanks to learn key concepts.</p>
+                            <a href="{% url 'games'%}" class="btn btn-primary btn-block">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+ {% endblock %}   

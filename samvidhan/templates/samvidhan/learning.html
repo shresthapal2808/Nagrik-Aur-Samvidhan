@@ -1,0 +1,218 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: #ffff; /* Default font color */
+    }
+
+    .timeline-section {
+        position: relative;
+        min-height: 100vh;
+        padding: 100px 15px;
+        overflow: hidden; /* Ensure pseudo-element does not overflow */
+    }
+
+    .timeline-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(/static/samvidhan/images/bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(8px); /* Adjust the blur effect here */
+        z-index: -1; /* Place it behind the content */
+    }
+
+    .timeline-section .content {
+        position: relative; /* Ensure content is on top of the background */
+    }
+
+    .timeline-items {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .timeline-items::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: #2f363e;
+        left: calc(50% - 1px);
+    }
+
+    .timeline-item {
+        margin-bottom: 40px;
+        width: 100%;
+        position: relative;
+        opacity: 0; /* Initially hidden */
+        transform: translateY(30px); /* Slide up animation */
+        transition: all 0.5s ease;
+    }
+
+    .timeline-item.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: calc(50% + 30px);
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        padding-left: calc(50% + 30px);
+    }
+
+    .timeline-dot {
+        height: 16px;
+        width: 16px;
+        background-color: #eaa023;
+        position: absolute;
+        left: calc(50% - 8px);
+        border-radius: 50%;
+        top: 10px;
+    }
+
+    .timeline-date {
+        font-size: 18px;
+        color: #eaa023;
+        margin: 6px 0 15px;
+    }
+
+    .timeline-content {
+        background-color: linear-gradient(
+            to bottom,
+            #FFD280 33%,   /* Light saffron */
+            #FFFFFF 33%,   /* White */
+            #FFFFFF 66%,   /* White */
+            #A8D9A7 66%    /* Light green */
+        ); /* Slightly transparent background for better text contrast */
+        padding: 30px;
+        border-radius: 5px;
+    }
+
+    .timeline-content h3 {
+        font-size: 30px; /* Increase the font size */
+        color: black;
+        margin: 0 0 10px;
+        text-transform: capitalize;
+        font-weight: bolder; /* Make the font weight bolder */
+    }
+
+    .timeline-content p {
+        color: black;
+        font-size: 18px; /* Increase the font size for better readability */
+        font-weight: bolder;
+        line-height: 24px;
+    }
+
+    .timeline-content iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* responsive */
+    @media (max-width: 767px) {
+        .timeline-items::before {
+            left: 7px;
+        }
+        .timeline-item:nth-child(odd) {
+            padding-right: 0;
+            text-align: left;
+        }
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+            padding-left: 37px;
+        }
+        .timeline-dot {
+            left: 0;
+        }
+    }
+</style>
+
+<section class="timeline-section">
+    <div class="timeline-items">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Introduction to the Preamble</h3>
+                <iframe src="https://drive.google.com/file/d/17ZYNoYNFKhoH5e_kiCWpQlbb9EQf3HMg/preview" allow="autoplay"></iframe>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>The Making of the Constitution</h3>
+                <iframe src="https://drive.google.com/file/d/1Hk0075SHR5_4WvMp-RetMIzwV1Gb3zF_/preview" allow="autoplay"></iframe>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Fundamental Duties</h3>
+                <iframe src="https://drive.google.com/file/d/1mjfG8SgAezeFoiqI6K_cJHO2vQbnhiMi/preview" allow="autoplay"></iframe>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Fundamental Rights</h3>
+                <iframe src="https://drive.google.com/file/d/1iCxlsi_t5Oc1rDIQiTYaOTtGS58JdaYX/preview" allow="autoplay"></iframe>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Directive Principles of the State Policy</h3>
+                <iframe src="https://drive.google.com/file/d/1Uqlc75L3TcDoMMIdjMFdWjQwNlqYLsPh/preview" allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript to handle scroll animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const isInViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
+
+    const scrollHandler = () => {
+        timelineItems.forEach((item) => {
+            if (isInViewport(item)) {
+                item.classList.add('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener('load', scrollHandler); // Initial check on load
+</script>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<div class="full-page-container">
+    <div class="games-container">
+        <h1><b>Explore the Games</b></h1>
+
+        <div class="game-section">
+            <div class="game-description">
+                <h2><b>Spin the Wheel</b></h2>
+                <p class='game-text'>Test your luck and knowledge about the Constitution of India with our interactive Spin the Wheel game! Spin the wheel and learn about the articles in our Constitution.</p>
+            </div>
+            <div class="game-action">
+                <a href="{% url 'wheel' %}" class="btn btn-primary">Play Now</a>
+            </div>
+        </div>
+
+        <div class="game-section">
+            <div class="game-description">
+                <h2><b>Memory Cards</b></h2>
+                <p class='game-text'>
+                    Challenge your memory and deepen your understanding of the Preamble to the Indian Constitution with our interactive
+                     Memory Cards game! Match pairs of cards featuring key phrases and concepts from the Preamble. 
+                </p>
+            </div>
+            <div class="game-action">
+                <a href="{% url 'memorycards' %}" class="btn btn-primary">Play Now</a>
+            </div>
+        </div>
+
+        <div class="game-section">
+            <div class="game-description">
+                <h2><b>Guess the Word</b></h2>
+                <p class='game-text'>Test your knowledge of constitutional terms and concepts with our Guess the Word game. Solve clues to fill in the blanks in the given number of chances only.</p>
+            </div>
+            <div class="game-action">
+                <a href="/crossword-puzzle" class="btn btn-primary">Play Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Full-page styling */
+    .full-page-container {
+        min-height: 100vh;
+        background-image: url("{% static 'samvidhan/images/bg.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .games-container {
+        width: 100%;
+        max-width: 1200px;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        
+    }
+
+    .games-container h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        font-family: cursive;
+    }
+
+    .game-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding: 20px;
+        background: linear-gradient(to right, #FFC7ED, #FF7777);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    
+    .game-section:hover{
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .game-description {
+        flex: 1;
+        padding-right: 20px;
+
+    }
+
+    .game-text{
+        font-size:20px;
+    }
+
+    .game-action {
+        flex-shrink: 0;
+        margin-left: 20px;
+    }
+
+    .game-action .btn {
+        padding: 12px 24px;
+        font-size: 1.2em;
+    }
+
+    @media (max-width: 768px) {
+        .game-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .game-description {
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .game-action {
+            margin-left: 0;
+        }
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section id="preamble-content">
+        <div class="header-section">
+            <h1>Introduction to the Preamble</h1>
+        </div>
+        
+        <div class="audio-controls">
+            <select id="audioSelect5" onchange="playAudio(this.value, 'audioPlayer5')" class="audio-select">
+                <option value="">Select Language</option>
+                <option value="{% static 'samvidhan/audio/preamble-hindi.mp3' %}">Hindi</option>
+                <option value="{% static 'samvidhan/audio/preamble-eng.mp3' %}">English</option>
+            </select>
+            <audio id="audioPlayer5" controls class="audio-player">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div class="content-section">
+            <div class="text-content">
+                <i class="fa-regular fa-volume"></i>
+                <pre>{{ preamble.text }}</pre> <!-- Use <pre> to preserve formatting -->   
+            </div>
+
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/17ZYNoYNFKhoH5e_kiCWpQlbb9EQf3HMg/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<style>
+    /* Common Styles */
+    .audio-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 400px;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .audio-select {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 16px;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .audio-select:focus {
+        border-color: #80bdff;
+        box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.25);
+        outline: none;
+    }
+    
+    .audio-player {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 4px;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+    }
+
+    #preamble-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    }
+    
+    .header-section {
+        background-color: #FFD700; /* Gold background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .header-section h1 {
+        font-family: 'Fredoka One', sans-serif; /* Playful bold font */
+        font-size: 48px;
+        color: #333;
+        text-shadow: 2px 2px #FF6347; /* Subtle shadow for text */
+    }
+    
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .text-content {
+        background-color: #FFFAF0; /* Light cream background for text */
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #FF4500; /* Dashed border for a playful effect */
+        font-size: 22px;
+        line-height: 1.6;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    
+    .video-container {
+        width: 100%;
+        max-width: 800px;
+        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Video shadow for focus */
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; /* Remove default border */
+        border-radius: 15px;
+    }
+    
+    @media (min-width: 768px) {
+        .content-section {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    
+        .text-content, .video-container {
+            width: 48%;
+        }
+    }
+    
+</style>
+
+<script>
+    function playAudio(src, audioPlayerId) {
+        var audioPlayer = document.getElementById(audioPlayerId);
+    
+        if (src) {
+            audioPlayer.src = src;  // Set the src directly on the audio element
+            audioPlayer.load();     // Reload the audio player to load the new source
+            audioPlayer.play();     // Optionally play the audio immediately
+        } else {
+            audioPlayer.pause();    // Pause the player if no source is selected
+        }
+    }
+</script>
+
+{% endblock %}

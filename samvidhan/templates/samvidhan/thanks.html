@@ -1,0 +1,101 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+        body {
+            background: url('/static/samvidhan/images/pattern.png') no-repeat center center fixed;
+            background-size: cover; /* Ensure the background image covers the entire page */
+            font-family: 'Comic Neue', cursive;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .thank-you-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .thank-you-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #FF5722; /* Vibrant header color */
+        }
+        .thank-you-container p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .thank-you-container::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 150%;
+            height: 150%;
+            background-image: url('https://www.transparenttextures.com/patterns/triangles.png'); /* Background pattern */
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .thank-you-container::after {
+            content: 'You’re a Superstar!';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            font-size: 2em;
+            color: rgba(255, 87, 34, 0.2); /* Light, playful color */
+            transform: rotate(-30deg);
+            z-index: 1;
+        }
+        .thank-you-container img {
+            width: 120px;
+            margin-top: 20px;
+        }
+        .btn-return {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #FF5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            position: relative; /* Ensure proper positioning */
+            z-index: 1; /* Ensure button is clickable */
+        }
+        .btn-return:hover {
+            background-color: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-container">
+            <h1><b>Thank You!</b></h1>
+            <p>Your feedback means the world to us. You're awesome!</p>
+            <img src="https://img.icons8.com/ios/452/thank-you.png" alt="Thank You Icon">
+            <a style=' text-decoration:none; color:inherit;' href="{% url 'index' %}" class="btn-return"><b>Back to Home</b></a>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

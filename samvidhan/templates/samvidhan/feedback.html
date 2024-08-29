@@ -1,0 +1,131 @@
+{% extends 'samvidhan/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Give Us Your Feedback!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+        body {
+            background: url('/static/samvidhan/images/pattern.png') no-repeat center center fixed;
+            background-size: cover; /* Ensure the background image covers the entire page */
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Neue', sans-serif;
+        }
+
+        .feedback-container {
+            max-width: 800px; /* Increased from 450px to 500px for a slightly wider container */
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for the form */
+            color: #333;
+        }
+
+        .feedback-container h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.6em;
+            color: #ff7e5f;
+        }
+
+        .feedback-container p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #666;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-check {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-check-label {
+            margin-left: 5px;
+        }
+
+        .form-radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn {
+            font-size: 1em;
+            background-color: #ff7e5f;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .feedback-container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .feedback-container h1 {
+                font-size: 1.4em;
+            }
+
+            .feedback-container p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .feedback-container {
+                margin: 30px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="feedback-container">
+            <h1><b>We'd Love Your Feedback!</b></h1>
+            <p>Let us know how your experience was. Your feedback helps us improve!</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.experience.label_tag }}
+                    <div class="form-radio-group">
+                        {% for radio in form.experience %}
+                            <div class="form-check">
+                                {{ radio.tag }}
+                                <label class="form-check-label">{{ radio.choice_label }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.suggestions.label_tag }}
+                    {{ form.suggestions }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
