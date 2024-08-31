@@ -5,70 +5,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamental Rights</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .article {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #2980b9;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .article p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.article {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.article h2 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+h1,h2{
+    cursor: pointer;
+}
+.article{
+    background-image: url({% static "samvidhan/images/bg2.jpeg" %});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    max-width: auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.pic img {
+    display: block;
+    margin-right: 10px; 
+}
+
+h1 {
+    
+    padding: 10px 20px 20px 20px;
+    font-size: 24px; 
+}
+
+.ss {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 0 0 100px; 
+    margin-right: 20px;
+}
+
+.picture {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 8px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+
+}
+.text{
+    flex: 1;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffb26ff4;
+    color: #000;
+    border-radius: 0 0 8px 8px;
+}
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fundamental Rights: Articles 14-18</h1>
-
+    
+       <div class="header"> 
+        <div class="pic">
+            <img src="{% static "samvidhan/images/bg4.png" %}" alt="Logo" width="70" height="100">
+        </div>
+        <h1>Fundamental Rights: Articles 25-28</h1>
+    </div>
         <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/sb4.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 25: Freedom of Conscience and  and Religion</h2>
+                    <p> Article 25 of the Indian Constitution guarantees the Right to Freedom of Conscience, allowing individuals to follow their own conscience and practice their religion. It also ensures the Right to Profession, Practice, and Propagation of Religion, meaning people can profess, practice, and share their faith freely. However, this freedom is subject to reasonable restrictions imposed by the state in the interests of public order, morality, and health, ensuring that religious practices do not conflict with these broader societal concerns.</p>
+                </div>
+            </div>
         </div>
 
         <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/sb1.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 26: Freedom to Manage Religious Affairs </h2>
+                    <p> Article 26 allows every religious denomination or group to establish and maintain its own institutions for religious and charitable purposes. These institutions have the autonomy to manage their own religious affairs, including appointing leaders and overseeing property. However, like other religious freedoms, this right is subject to reasonable restrictions imposed by the state to ensure public order, morality, and health.</p>
+                </div>
+            </div>
+           
+        </div>
+        <div class="article">
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/sb3.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 27: Freedom from Taxes for Promotion of Religion </h2>
+                    <p> Article 27 stipulates that individuals cannot be forced to pay taxes that are used specifically for the promotion or maintenance of any religion. This provision ensures the secular nature of the state by preventing public funds from being used to support religious activities, thus maintaining neutrality in religious matters.</p>
+                </div>
+            </div>
+           
+        </div>
+        <div class="article">
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/sb2.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 28: Freedom from Religious Instruction </h2>
+                    <p> Article 28 mandates that government-aided educational institutions must not provide religious instruction, ensuring secularism in state-funded schools. However, religious institutions that do not receive government aid are permitted to offer religious education in their own schools, allowing them to teach their faith while maintaining the separation of state and religion in public education.</p>
+                </div>
+            </div>
+           
         </div>
 
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
+    <div class="article">
+        <div class="text"><h2>Case Example : St. Xavier's College v. State of Gujarat (1974).</h2>
+            The Supreme Court of India ruled in favor of St. Xavier's College, allowing the institution to include religious instruction in its curriculum despite receiving government aid. The Court held that while government-aided institutions must maintain secularism, religious institutions could still impart religious education as part of their own distinct educational philosophy. The ruling underscored that religious institutions should have the autonomy to impart religious values without state interference, as long as they comply with the constitutional provisions for secularism.This case exemplifies how the articles balances the right to impart religious education with the principle of secularism in government-aided institutions.
         </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+    </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>
+

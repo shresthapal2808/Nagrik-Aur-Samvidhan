@@ -4,71 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamental Rights</title>
+    <title>Right to Freedom - Fundamental Rights</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #d4e3f1;
+            color: #333;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        header {
+            background-color: #5331da;
+            color: #fefdff;
+            padding: 20px;
             text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         .article {
-            background-color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #cbefff;
+            border-left: 8px solid #8a5ef0;
             border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .article img {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .article div {
+            flex: 2;
         }
         .article h2 {
-            color: #2980b9;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            margin-top: 0;
+            color: black;
         }
-        .article p {
-            font-size: 1.1em;
-            line-height: 1.6;
+        .case-example {
+            background-color: #d2cdff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 8px solid #2e85fe;
+        }
+        .case-example h3 {
+            color: #3e18ff;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #81adfff4;
+            color: #000;
+            border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fundamental Rights: Articles 14-18</h1>
+        <header>
+            <h1>Right to Freedom</h1>
+            <p>Fundamental Rights of the Indian Constitution</p>
+        </header>
 
-        <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+        <section class="article">
+            <img src="{% static "samvidhan/images/19.jpg" %}" alt="Protectio of 6 Rights">
+            <div>
+                <h2>Article 19: Protection of 6 Rights</h2>
+                <p> Article 19 guarantees six fundamental freedoms to all citizens: the right to freedom of speech and expression, the right to assemble peacefully, the right to form associations or unions, the right to move freely within India, the right to reside and settle anywhere in the country, and the right to practice any profession or business. This freedom includes expressing views through various means, holding public meetings on public land, forming or not forming groups, and moving within or outside the country. Restrictions exist to prevent violent assemblies, protect tribal areas, and prohibit immoral or dangerous professions.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static "samvidhan/images/20.jpg" %}" alt="Protection in Respect of Conviction for Offences">
+            <div>
+                <h2>Article 20: Protection in Respect of Conviction for Offences</h2>
+                <p>Article 20 protects individuals, including foreigners and legal entities, from arbitrary and excessive punishment. It ensures that no one can be convicted of an offense unless it violates a law in force at the time of the act or face a penalty greater than what the law prescribes. It also guarantees that no one can be prosecuted or punished more than once for the same offense and that no one can be forced to be a witness against themselves.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static "samvidhan/images/21.jpg" %}" alt="Protection of Life and Personal Liberty">
+            <div>
+                <h2>Article 21: Protection of Life and Personal Liberty</h2>
+                <p>Article 21 guarantees that no person, whether a citizen or non-citizen, can be deprived of life or personal liberty except through a procedure established by law. This right encompasses more than just survival; it includes the right to live with dignity and to have a meaningful and complete life.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static "samvidhan/images/21(A).jpg" %}" alt="Right to Education">
+            <div>
+                <h2>Article 21(A): Right to Education</h2>
+                <p>Article 21(A) mandates that the State provide free and compulsory education to all children aged six to fourteen years. This makes elementary education a Fundamental Right but does not extend to higher or professional education. The provision was added by the 86th Constitutional Amendment Act of 2002. Prior to this, Article 45 in Part IV of the Constitution addressed free and compulsory education for children.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static "samvidhan/images/22.jpg" %}" alt="Protection Against Arrest and Detention">
+            <div>
+                <h2>Article 22: Protection Against Arrest and Detentions</h2>
+                <p>Article 22 provides protections for individuals who are arrested or detained. It covers both punitive detention, which follows trial and conviction, and preventive detention, which occurs without trial. For ordinary law, it guarantees the right to be informed of arrest grounds, consult a lawyer, be presented before a magistrate within 24 hours, and be released if not authorized for further detention. For preventive detention, it limits detention to three months without an advisory board's approval, requires communication of grounds for detention, and allows the detainee to contest the detention order. These protections apply to both citizens and foreigners.</p>
+            </div>
+        </section>
+
+        <div class="case-example" style='margin-bottom: 15px;'>
+            <h3>Case Example: Maneka Gandhi v. Union of India (1978)</h3>
+            <p>In this landmark case, the Supreme Court of India ruled that Article 21’s protection of personal liberty extends beyond mere procedural safeguards. The Court emphasized that any law depriving a person of their liberty must be fair, just, and reasonable, and not arbitrary or oppressive.</p>
         </div>
 
-        <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>

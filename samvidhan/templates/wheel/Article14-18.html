@@ -4,71 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamental Rights</title>
+    <title>Right to Equality - Fundamental Rights</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #d4e3f1;
+            color: #333;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
         }
-        h1 {
+        header {
+            background-color: #f7a15a;
+            color: #fefdff;
+            padding: 20px;
             text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         .article {
-            background-color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff79f;
+            border-left: 8px solid #fe7b4f;
             border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #2980b9;
-            font-size: 1.5em;
             margin-bottom: 10px;
         }
-        .article p {
-            font-size: 1.1em;
-            line-height: 1.6;
+        .article img {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .article div {
+            flex: 2;
+        }
+        .article h2 {
+            margin-top: 0;
+            color: black;
+        }
+        .case-example {
+            background-color: #ffedcd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 8px solid #fe9a2e;
+        }
+        .case-example h3 {
+            color: #ff5618;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffb26ff4;
+            color: #000;
+            border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fundamental Rights: Articles 14-18</h1>
+        <header>
+            <h1>Right to Equality</h1>
+            <p>Fundamental Rights of the Indian Constitution</p>
+        </header>
 
-        <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+        <section class="article" style='margin-top: 10px;'>
+            <img src="{% static 'samvidhan/images/14.jpg' %}" alt="Equality before Law">
+            <div>
+                <h2>Article 14: Equality before Law</h2>
+                <p> Article 14 ensures equality before the law for all persons in India, including citizens, foreigners, and legal entities. However, exceptions include immunity for the President and Governors under Article 361, protection for publishers of true parliamentary reports under Article 361-A, and immunity for members of Parliament and State Legislatures under Articles 105 and 194. Foreign sovereigns, ambassadors, and diplomats also enjoy immunity from legal proceedings.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static 'samvidhan/images/15.jpg' %}" alt="Prohibition of Discrimination">
+            <div>
+                <h2>Article 15: Prohibition of Discrimination</h2>
+                <p>Article 15 prohibits discrimination against any citizen on the grounds of religion, race, caste, sex, or place of birth. However, exceptions allow the State to make special provisions for the upliftment of women, children, and socially or educationally backward classes, such as reservations and access to free education.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static 'samvidhan/images/16.jpg' %}" alt="Equality of Opportunity">
+            <div>
+                <h2>Article 16: Equality of Opportunity in Public Employment</h2>
+                <p>Article 16 ensures equality of opportunity for all citizens in public employment or appointments. However, exceptions allow reservations for backward classes that are underrepresented in state services. Additionally, individuals holding positions in religious or denominational institutions may be required to belong to the specific religion or denomination.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static 'samvidhan/images/17.jpg' %}" alt="Abolition of Untouchability">
+            <div>
+                <h2>Article 17: Abolition of Untouchability</h2>
+                <p>Article 17 abolishes untouchability and prohibits its practice in any form, making it a punishable offense. Those convicted of practicing untouchability are disqualified from elections to Parliament or state legislatures. Offenses include preaching untouchability, preventing access to public places, refusing admission to hospitals or educational institutions, justifying untouchability on any grounds, and insulting scheduled caste members based on untouchability.</p>
+            </div>
+        </section>
+
+        <section class="article">
+            <img src="{% static 'samvidhan/images/18.jpg' %}" alt="Abolition of Titles">
+            <div>
+                <h2>Article 18: Abolition of Titles</h2>
+                <p>Article 18 abolishes titles, barring the State from conferring titles on citizens or foreigners, except for military or academic distinctions. It prohibits Indian citizens from accepting titles from foreign states. Foreigners holding offices under the Indian State need the President's consent to accept titles from other countries. Additionally, no one in India can accept presents, emoluments, or offices from foreign states without the President's approval.</p>
+            </div>
+        </section>
+
+        <div class="case-example" style='margin-bottom: 15px;'>
+            <h3>Case Example: State of West Bengal v. Anwar Ali Sarkar (1952)</h3>
+            <p>In this landmark case, the Supreme Court of India ruled that Article 14 prohibits the State from arbitrarily classifying citizens for different treatment under the law. The Court struck down a law that allowed for special trial procedures for certain individuals, as it violated the principle of "equality before the law."</p>
         </div>
 
-        <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>

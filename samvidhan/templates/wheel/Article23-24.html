@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamental Rights</title>
+    <link rel="stylesheet" href="style.css">
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
@@ -17,6 +19,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            
         }
         h1 {
             text-align: center;
@@ -25,13 +28,13 @@
         }
         .article {
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 16px;
             padding: 15px;
             margin-bottom: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .article h2 {
-            color: #2980b9;
+            color: black;
             font-size: 1.5em;
             margin-bottom: 10px;
         }
@@ -39,36 +42,111 @@
             font-size: 1.1em;
             line-height: 1.6;
         }
+        h1,h2{
+            cursor: pointer;
+        }
+        .article{
+            background-image: url({% static 'samvidhan/images/bg2.jpeg'%});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+            max-width: auto;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+        }
+        
+        .pic img {
+            display: block;
+            margin-right: 10px; 
+        }
+        
+        h1 {
+            
+            padding: 10px 20px 20px 20px;
+            font-size: 24px; 
+        }
+
+        .ss {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .image-container {
+            flex: 0 0 100px; 
+            margin-right: 20px;
+        }
+        
+        .picture {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 8px;
+            box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+
+        }
+        .text{
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffb26ff4;
+            color: #000;
+            border-radius: 0 0 8px 8px;
+        }
+   
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fundamental Rights: Articles 14-18</h1>
-
+    
+       <div class="header"> 
+        <div class="pic">
+            <img src="{% static "samvidhan/images/bg4.png" %}" alt="Logo" width="70" height="100">
+        </div>
+        <h1>Fundamental Rights: Articles 23-24</h1>
+    </div>
         <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/bg5.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 23: Protection Against Exploitation</h2>
+                    <p> Article 23 of the Indian Constitution, part of the Fundamental Rights, addresses the prohibition of exploitation. It specifically outlaws the trafficking of human beings, which includes practices like forced labor and slavery. Additionally, it prohibits "begar," a term referring to forced or unpaid labor. This article is designed to protect individuals from exploitation and ensure that labor practices are fair and just, safeguarding human dignity and freedom.</p>
+                </div>
+            </div>
         </div>
 
         <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/bg6.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 24: Prohibition of Child Labor </h2>
+                    <p> Article 24 of the Indian Constitution addresses the prohibition of child labor. It specifically bans the employment of children under the age of 14 in factories, mines, and other hazardous occupations. This provision aims to protect children from exploitation and ensure their right to education and a healthy, safe environment. The goal is to prevent the abuse of child labor and to safeguard children's physical and mental development, promoting their well-being and future opportunities.</p>
+                </div>
+            </div>
+           
         </div>
 
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
+    <div class="article">
+        <div class="text"><h2>Case Example : Bandhua Mukti Morcha vs. Union of India (1984).</h2>
+            In 1984, the Supreme Court of India, led by Justice P.N. Bhagwati, delivered a landmark judgment. The court recognized the widespread existence of bonded labor and ordered the immediate release and rehabilitation of the laborers and took rehabilitative measures.
         </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+    </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>
+
