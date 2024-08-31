@@ -15,6 +15,8 @@ urlpatterns = [
     path('feedback/', views.feedback, name='feedback'),
     path('thanks/', views.thanks, name='thanks'),
     path('wheel/', views.wheel, name='wheel'),
+    path('guess/', views.guess, name='guess'),
+    path('wheel/<str:article_name>/', views.wheel_article, name='wheel_article'),
 
 
     # path('quiz1/', views.quiz, name='quiz'),
