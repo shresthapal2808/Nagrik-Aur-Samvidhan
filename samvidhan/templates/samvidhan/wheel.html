@@ -132,13 +132,13 @@
 
         // Object that stores values of minimum and maximum angle for a value
         const rotationValues = [
-            { minDegree: 0, maxDegree: 30, value: "Article 19-22" },
-            { minDegree: 31, maxDegree: 90, value: "Article 14-18" },
-            { minDegree: 91, maxDegree: 150, value: "Article 32-35" },
-            { minDegree: 151, maxDegree: 210, value: "Article 29-30" },
-            { minDegree: 211, maxDegree: 270, value: "Article 25-28" },
-            { minDegree: 271, maxDegree: 330, value: "Article 23-24" },
-            { minDegree: 331, maxDegree: 360, value: "Article 19-22" },
+            { minDegree: 0, maxDegree: 30, value: "Article19-22" },
+            { minDegree: 31, maxDegree: 90, value: "Article14-18" },
+            { minDegree: 91, maxDegree: 150, value: "Article32-35" },
+            { minDegree: 151, maxDegree: 210, value: "Article29-30" },
+            { minDegree: 211, maxDegree: 270, value: "Article25-28" },
+            { minDegree: 271, maxDegree: 330, value: "Article23-24" },
+            { minDegree: 331, maxDegree: 360, value: "Article19-22" },
         ];
 
         // Size of each piece
@@ -192,7 +192,7 @@
             for (let i of rotationValues) {
                 // If the angleValue is between min and max then display it
                 if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-                    finalValue.innerHTML = `<a href="${i.value}.html" target="_blank"><p>Value: ${i.value}</p></a>`;
+                    finalValue.innerHTML = `<a href="/wheel/${i.value}.html" target="_blank"><p>Value: ${i.value}</p></a>`;
                     spinBtn.disabled = false;
                     break;
                 }
