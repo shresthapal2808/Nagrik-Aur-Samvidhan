@@ -17,16 +17,4 @@ urlpatterns = [
     path('wheel/', views.wheel, name='wheel'),
     path('guess/', views.guess, name='guess'),
     path('wheel/<str:article_name>/', views.wheel_article, name='wheel_article'),
-
-
-    # path('quiz1/', views.quiz, name='quiz'),
-    # path('spin_wheel/', views.spin_wheel, name='spin_wheel'),
-    # path('board_game/', views.board_game, name='board_game'),
-    # path('subscribe/', views.subscribe, name='subscribe'),
-    #  path('quiz1/', views.quiz1, name='quiz1'),  # Add this line
-    # path('quiz2/', views.quiz2, name='quiz2'),  # Add this line
-    #  ,  # Add this line
-    # path('contact/', views.contact, name='contact'),  # Add this line
-    # path('privacy/', views.privacy, name='privacy'),  # Add this line
-    # path('terms/', views.terms, name='terms'),  # Add this line
 ]
