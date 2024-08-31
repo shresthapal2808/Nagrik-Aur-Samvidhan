@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Preamble, FundamentalRights, FundamentalDuties, DirectivePrinciples, UserFeedback
 from .forms import UserFeedbackForm
+from django.http import JsonResponse
+
 
 # Home Page View
 def index(request):
@@ -56,3 +58,13 @@ def feedback(request):
 
 def thanks(request):
     return render(request, 'samvidhan/thanks.html')
+
+def guess(request):
+    return render(request, 'samvidhan/guess.html')
+
+
+def wheel_article(request, article_name):
+    # Define the template name based on the article_name passed in the URL
+    template_name = f'wheel/{article_name}'
+    return render(request, template_name)
+   
