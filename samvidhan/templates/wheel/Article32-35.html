@@ -5,70 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamental Rights</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .article {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #2980b9;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .article p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-    </style>
+    
 </head>
 <body>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.article {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.article h2 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+h1,h2{
+    cursor: pointer;
+}
+.article{
+    background-image: url({% static "samvidhan/images/pic1.jpeg" %});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    max-width: auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.pic img {
+    display: block;
+    margin-right: 10px; 
+}
+
+h1 {
+    
+    padding: 10px 20px 20px 20px;
+    font-size: 24px; 
+}
+
+.ss {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 0 0 100px; 
+    margin-right: 20px;
+}
+
+.picture {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 8px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+
+}
+.text{
+    flex: 1;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffb26ff4;
+    color: #000;
+    border-radius: 0 0 8px 8px;
+}
+    </style>
+</body>
+<body>
     <div class="container">
+    
+       <div class="header"> 
+        <div class="pic">
+            <img src="{% static "samvidhan/images/bg4.png" %}" alt="Logo" width="70" height="100">
+        </div>
         <h1>Fundamental Rights: Articles 32-35</h1>
-
+    </div>
         <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/pic4.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 32: Right to Constitutional Remedies</h2>
+                    <p>  Article 32 of the Indian Constitution is a fundamental right that guarantees the right to constitutional remedies. It is considered one of the most crucial provisions in the Constitution as it empowers individuals to seek protection and enforcement of their fundamental rights directly from the Supreme Court of India.
+
+                        Article 32 grants every individual the right to move the Supreme Court for the enforcement of their fundamental rights. This means that if someone believes their fundamental rights have been violated, they can approach the Supreme Court directly for relief. It also ensures that not only do individuals have the right to move the Supreme Court, but the Court also has the power to issue appropriate orders, directions, or writs for the enforcement of fundamental rights.</p>
+                </div>
+            </div>
         </div>
 
         <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/pic5.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 33: Restriction of Rights for Forces </h2>
+                    <p> Article 33 empowers the Parliament to make laws that would restrict the application of fundamental rights to a specific category of people including members of the Indian Army and intelligence organisations.Power of Parliament to modify the rights conferred by this Part in their application etc Parliament may, by law, determine to what extent any of the rights conferred by this Part shall, in their application to,
+
+                         the members of the Armed Forces or
+                        
+                         the members of the Forces charged with the maintenance of public order or
+                        
+                         persons employed in any bureau or other organisation established by the State for purposes of intelligence or counterintelligence or
+                        
+                         persons employed in, or in connection with, the telecommunication systems set up for the purposes of any Force, bureau or organisation referred to  be restricted or abrogated so as to ensure the proper discharge of their duties and the maintenance of discipline among them.</p>
+                </div>
+            </div>
+           
+        </div>
+        <div class="article">
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/pic6.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 34: Restricting Rights During Martial Law</h2>
+                    <p> Article 34 of Indian Constitution allows the Parliament to impose restrictions on the rights conferred by Part III of the Constitution (Fundamental Rights) during the operation of martial law in any area. It provides indemnity (legal protection) to persons in respect of acts done in connection with the maintenance or restoration of order during martial law. The Parliament may by law validate any acts done under martial law that would otherwise be illegal.Article 34 provides a legal framework for imposing restrictions on fundamental rights during martial law, which is the imposition of direct military control in a situation of extreme emergency.
+                        It ensures that any actions taken to restore order and maintain peace during such periods, even if they contravene fundamental rights, are legally protected.
+
+
+                        </p>
+                </div>
+            </div>
+           
+        </div>
+        <div class="article">
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/pic7.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 35:Parliament's Power to Legislate on Rights </h2>
+                    <p> Article 35 of Indian Constitution safeguards the uniform enforcement of fundamental rights by placing specific matters under the legislative authority of Parliament.
+                        It relates to various provisions, including the restriction of fundamental rights for members of the armed forces (Article 33), members of forces maintaining public order, and the indemnity provided under Article 34 during martial law.
+                        The Article prevents state legislatures from enacting conflicting laws, thus maintaining consistency in the protection and enforcement of fundamental rights across all states and union territories of India.</p>
+                </div>
+            </div>
+           
         </div>
 
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
+    <div class="article">
+        <div class="text"><h2>Case Example : Sheikh Abdullah v. State of Jammu and Kashmir (1959).</h2>
+            <P> Sheikh Abdullah challenged his detention under the Public Safety Act, 1978.
+                The Supreme Court affirmed that the right to challenge detention is fundamental and must be available even in Jammu and Kashmir, reinforcing the applicability of Article 32.</P>
         </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+    </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>
