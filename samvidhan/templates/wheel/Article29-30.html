@@ -5,70 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamental Rights</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .article {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .article h2 {
-            color: #2980b9;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .article p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-    </style>
+    
 </head>
 <body>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.article {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.article h2 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+{% comment %} h1,h2{
+    cursor: pointer;
+} {% endcomment %}
+.article{
+    background-image: url({% static "samvidhan/images/img1.jpeg" %});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    max-width: auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.pic img {
+    display: block;
+    margin-right: 10px; 
+}
+
+h1 {
+    
+    padding: 10px 20px 20px 20px;
+    font-size: 24px; 
+}
+
+.ss {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 0 0 100px; 
+    margin-right: 20px;
+}
+
+.picture {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 8px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+
+}
+.text{
+    flex: 1;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffb26ff4;
+    color: #000;
+    border-radius: 0 0 8px 8px;
+}
+    </style>
+</body>
+<body>
     <div class="container">
+    
+       <div class="header"> 
+        <div class="pic">
+            <img src="{% static "samvidhan/images/img2.png" %}" alt="Logo" width="70" height="100">
+        </div>
         <h1>Fundamental Rights: Articles 29-30</h1>
-
+    </div>
         <div class="article">
-            <h2>Article 14: Right to Equality</h2>
-            <p>Everyone is equal in the eyes of the law. The government cannot discriminate against anyone based on religion, race, caste, gender, or place of birth.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/img3.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 29: Right to Protect the Interests of Minorities</h2>
+                    <p> Article 29 of the Indian Constitution safeguards the cultural and educational rights of minorities. It aims to protect the interests of religious, linguistic, and cultural minorities in India. Any section of citizens residing in India having a distinct language, script, or culture of its own has the right to conserve and promote its language, script, or culture. This provision ensures the preservation and development of the unique identity and heritage of minority communities. Minority communities, whether based on religion or language, have the right to establish and administer educational institutions of their choice. This enables minorities to establish educational institutions that cater to their specific cultural and linguistic needs. Article 29 also prohibits discrimination against any citizen on the grounds of religion, race, caste, language, or any of them with respect to admission into educational institutions maintained or aided by the state.</p>
+                </div>
+            </div>
         </div>
 
         <div class="article">
-            <h2>Article 15: Prohibition of Discrimination</h2>
-            <p>No one can be discriminated against on grounds of religion, race, caste, gender, or place of birth. However, the state can make special provisions for women, children, and backward classes.</p>
+            
+            <div class="ss">
+                <div class="image-container">
+                    <img src="{% static "samvidhan/images/img4.jpeg" %}" alt="Picture" class="picture">
+                </div>
+                <div class="text">
+                    <h2>Article 30: Minority Rights in Education </h2>
+                    <p> Article 30 of the Indian Constitution allows all minorities, whether based on religion or language, shall have the right to establish and administer educational institutions of their choice.In making any law providing for the compulsory acquisition of any property of an educational institution established and administered by a minority , the State shall ensure that the amount fixed by or determined under such law for the acquisition of such property is such as would not restrict or abrogate the right guaranteed under that clause.The state shall not, in granting aid to educational institutions, discriminate against any educational institution on the ground that it is under the management of a minority, whether based on religion or language.
+                 </p>
+                </div>
+            </div>
+           
         </div>
-
-        <div class="article">
-            <h2>Article 16: Equality of Opportunity in Public Employment</h2>
-            <p>All citizens have an equal opportunity to work in government jobs. There can be no discrimination based on religion, race, caste, gender, or place of birth. However, the government can reserve some jobs for certain backward classes to promote equality.</p>
+        
+    <div class="article">
+        <div class="text"><h2>Case Example : In D.A.V. College, Jullundur v. State of Punjab (1971).</h2>
+            he Supreme Court held that minority institutions have the right to appoint teachers of their choice, subject to their qualifications and suitability. It emphasized the importance of preserving the minority character of such institutions.
+            The Supreme Court ruled that the Arya Samaj, a Hindu group, were a religious minority in Punjab. The court rejected the argument that Hindus could not be a religious minority in Punjab because they were the majority in India. 
+            
         </div>
-
-        <div class="article">
-            <h2>Article 17: Abolition of Untouchability</h2>
-            <p>Untouchability is abolished, and it is forbidden to practice it in any form. Anyone who practices untouchability can be punished by law.</p>
-        </div>
-
-        <div class="article">
-            <h2>Article 18: Abolition of Titles</h2>
-            <p>The state cannot give any titles of nobility to citizens. Titles like 'Sir' or 'Raja' are not allowed. However, military and academic honors can still be given.</p>
-        </div>
+    </div>
+        <footer>
+            <p>&copy; 2024 Fundamental Rights of the Indian Constitution</p>
+        </footer>
     </div>
 </body>
 </html>
