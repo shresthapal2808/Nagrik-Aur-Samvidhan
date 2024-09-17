@@ -18,7 +18,7 @@ By incorporating **multimedia elements**, **multilingual support**, and **intera
 
 Check out our functional prototype showcasing all key features and functionalities of the platform:
 
-[Prototype Video](https://drive.google.com/file/d/1Xni9PBSxna76x1btva-xYIsXIeiJ5lTa/view?usp=sharing)
+[Click Here](https://drive.google.com/file/d/1Xni9PBSxna76x1btva-xYIsXIeiJ5lTa/view?usp=sharing)
 
 ## Team Members & Contributions
 
