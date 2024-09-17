@@ -8,7 +8,7 @@ By incorporating **multimedia elements**, **multilingual support**, and **intera
 
 ## Key Features
 
-- **Interactive Games**: Spin a Wheel, Card Games, Board Games, Snake & Ladder, and Monopoly to teach various sections of the Constitution.
+- **Interactive Games**: Spin a Wheel, Card Games & Word Guessing Game to teach various sections of the Constitution.
 - **Multimedia Integration**: Videos and audio explanations to simplify the Constitution’s language.
 - **Multilingual Support**: Accessibility to users from diverse linguistic backgrounds with content translation.
 - **Chatbot Assistance**: Real-time assistance for answering queries related to the Constitution and guiding users through the platform.
@@ -18,7 +18,7 @@ By incorporating **multimedia elements**, **multilingual support**, and **intera
 
 Check out our functional prototype showcasing all key features and functionalities of the platform:
 
-[Prototype Video Link]([https://yourvideolink.com](https://drive.google.com/file/d/1Xni9PBSxna76x1btva-xYIsXIeiJ5lTa/view?usp=sharing)
+(https://drive.google.com/file/d/1Xni9PBSxna76x1btva-xYIsXIeiJ5lTa/view?usp=sharing)
 
 ## Team Members & Contributions
 
